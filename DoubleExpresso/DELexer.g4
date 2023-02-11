@@ -1,9 +1,19 @@
-Number : '-'? Digits '.' Digits
+lexer grammar DELexer;
+
+Number: '-'? Digits '.' Digits
     | '-'? Digits
     ;
 
-Identifier : Letter LetterOrDigits*
+Identifier : Letter LetterOrDigit*
     ;
+
+PLUS: '+';
+MINUS: '-';
+MULT: '*';
+DIV: '/';
+
+OPEN_PARENS: '(';
+CLOSE_PARENS: ')';
 
 fragment LetterOrDigit : Letter
     | [0-9]
