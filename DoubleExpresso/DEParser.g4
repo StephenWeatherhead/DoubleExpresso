@@ -1,5 +1,9 @@
+parser grammar DEParser;
+
+options { tokenVocab=DELexer; }
+
 expression : Number 
-    | Identifier
+    | variable
     | bracketedExpression
     | sumExpression
     | productExpression
@@ -12,4 +16,7 @@ sumExpression : expression bop=('+'|'-') expression
     ;
     
 productExpression : expression bop=('*'|'/') expression
+    ;
+
+variable : Identifier
     ;
